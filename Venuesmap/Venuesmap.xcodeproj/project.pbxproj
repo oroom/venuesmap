@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		D32086912961CFA800342E56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086902961CFA800342E56 /* AppDelegate.swift */; };
 		D32086932961CFA800342E56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086922961CFA800342E56 /* SceneDelegate.swift */; };
-		D32086952961CFA800342E56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086942961CFA800342E56 /* ViewController.swift */; };
+		D32086952961CFA800342E56 /* VenuesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086942961CFA800342E56 /* VenuesController.swift */; };
 		D320869A2961CFB000342E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D32086992961CFB000342E56 /* Assets.xcassets */; };
 		D320869D2961CFB000342E56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D320869B2961CFB000342E56 /* LaunchScreen.storyboard */; };
 		D32086A82961CFB100342E56 /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086A72961CFB100342E56 /* LocationServiceTests.swift */; };
 		D32086C12961D09500342E56 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086C02961D09500342E56 /* Router.swift */; };
 		D32086C52961D24600342E56 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086C42961D24600342E56 /* LocationService.swift */; };
 		D32086C72961D37E00342E56 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086C62961D37E00342E56 /* LocationManager.swift */; };
+		D32086C92961E7A300342E56 /* LocationStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086C82961E7A300342E56 /* LocationStatusController.swift */; };
+		D32086CC2961E83A00342E56 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086CB2961E83A00342E56 /* Labels.swift */; };
+		D32086CE2961E84F00342E56 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086CD2961E84F00342E56 /* Symbols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +35,7 @@
 		D320868D2961CFA800342E56 /* Venuesmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Venuesmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32086902961CFA800342E56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D32086922961CFA800342E56 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D32086942961CFA800342E56 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D32086942961CFA800342E56 /* VenuesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesController.swift; sourceTree = "<group>"; };
 		D32086992961CFB000342E56 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D320869C2961CFB000342E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D320869E2961CFB000342E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,6 +44,9 @@
 		D32086C02961D09500342E56 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		D32086C42961D24600342E56 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		D32086C62961D37E00342E56 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D32086C82961E7A300342E56 /* LocationStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStatusController.swift; sourceTree = "<group>"; };
+		D32086CB2961E83A00342E56 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
+		D32086CD2961E84F00342E56 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,7 @@
 		D320868F2961CFA800342E56 /* Venuesmap */ = {
 			isa = PBXGroup;
 			children = (
+				D32086CA2961E82600342E56 /* CommonUI */,
 				D32086C32961D1F300342E56 /* Location */,
 				D32086C22961D1D200342E56 /* VenuesMap */,
 				D32086902961CFA800342E56 /* AppDelegate.swift */,
@@ -105,7 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				D32086C02961D09500342E56 /* Router.swift */,
-				D32086942961CFA800342E56 /* ViewController.swift */,
+				D32086942961CFA800342E56 /* VenuesController.swift */,
+				D32086C82961E7A300342E56 /* LocationStatusController.swift */,
 			);
 			path = VenuesMap;
 			sourceTree = "<group>";
@@ -117,6 +125,15 @@
 				D32086C62961D37E00342E56 /* LocationManager.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		D32086CA2961E82600342E56 /* CommonUI */ = {
+			isa = PBXGroup;
+			children = (
+				D32086CB2961E83A00342E56 /* Labels.swift */,
+				D32086CD2961E84F00342E56 /* Symbols.swift */,
+			);
+			path = CommonUI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,11 +236,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32086CE2961E84F00342E56 /* Symbols.swift in Sources */,
 				D32086C12961D09500342E56 /* Router.swift in Sources */,
-				D32086952961CFA800342E56 /* ViewController.swift in Sources */,
+				D32086952961CFA800342E56 /* VenuesController.swift in Sources */,
+				D32086CC2961E83A00342E56 /* Labels.swift in Sources */,
 				D32086C72961D37E00342E56 /* LocationManager.swift in Sources */,
 				D32086C52961D24600342E56 /* LocationService.swift in Sources */,
 				D32086912961CFA800342E56 /* AppDelegate.swift in Sources */,
+				D32086C92961E7A300342E56 /* LocationStatusController.swift in Sources */,
 				D32086932961CFA800342E56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

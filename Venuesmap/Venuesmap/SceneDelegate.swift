@@ -9,6 +9,7 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    private var router: MainRouter = MainRouter()
     var window: UIWindow?
 
 
@@ -18,9 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let router = MainRouter()
         window?.rootViewController = router.topViewController
-        
         window?.makeKeyAndVisible()
     }
 
