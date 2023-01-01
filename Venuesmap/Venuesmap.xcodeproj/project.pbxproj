@@ -15,6 +15,7 @@
 		D32086A82961CFB100342E56 /* VenuesmapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086A72961CFB100342E56 /* VenuesmapTests.swift */; };
 		D32086B22961CFB100342E56 /* VenuesmapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086B12961CFB100342E56 /* VenuesmapUITests.swift */; };
 		D32086B42961CFB100342E56 /* VenuesmapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086B32961CFB100342E56 /* VenuesmapUITestsLaunchTests.swift */; };
+		D32086C12961D09500342E56 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086C02961D09500342E56 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D32086AD2961CFB100342E56 /* VenuesmapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenuesmapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D32086B12961CFB100342E56 /* VenuesmapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesmapUITests.swift; sourceTree = "<group>"; };
 		D32086B32961CFB100342E56 /* VenuesmapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesmapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D32086C02961D09500342E56 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				D32086992961CFB000342E56 /* Assets.xcassets */,
 				D320869B2961CFB000342E56 /* LaunchScreen.storyboard */,
 				D320869E2961CFB000342E56 /* Info.plist */,
+				D32086C02961D09500342E56 /* Router.swift */,
 			);
 			path = Venuesmap;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32086C12961D09500342E56 /* Router.swift in Sources */,
 				D32086952961CFA800342E56 /* ViewController.swift in Sources */,
 				D32086912961CFA800342E56 /* AppDelegate.swift in Sources */,
 				D32086932961CFA800342E56 /* SceneDelegate.swift in Sources */,
