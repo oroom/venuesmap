@@ -19,6 +19,7 @@
 		D32086C92961E7A300342E56 /* LocationStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086C82961E7A300342E56 /* LocationStatusController.swift */; };
 		D32086CC2961E83A00342E56 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086CB2961E83A00342E56 /* Labels.swift */; };
 		D32086CE2961E84F00342E56 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086CD2961E84F00342E56 /* Symbols.swift */; };
+		D32086D62961FBB400342E56 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086D52961FBB400342E56 /* Map.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D32086C82961E7A300342E56 /* LocationStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStatusController.swift; sourceTree = "<group>"; };
 		D32086CB2961E83A00342E56 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		D32086CD2961E84F00342E56 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
+		D32086D52961FBB400342E56 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				D32086C02961D09500342E56 /* Router.swift */,
 				D32086942961CFA800342E56 /* VenuesController.swift */,
 				D32086C82961E7A300342E56 /* LocationStatusController.swift */,
+				D32086D52961FBB400342E56 /* Map.swift */,
 			);
 			path = VenuesMap;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32086D62961FBB400342E56 /* Map.swift in Sources */,
 				D32086CE2961E84F00342E56 /* Symbols.swift in Sources */,
 				D32086C12961D09500342E56 /* Router.swift in Sources */,
 				D32086952961CFA800342E56 /* VenuesController.swift in Sources */,
