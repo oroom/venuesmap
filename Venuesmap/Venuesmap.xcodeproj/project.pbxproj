@@ -12,21 +12,14 @@
 		D32086952961CFA800342E56 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086942961CFA800342E56 /* ViewController.swift */; };
 		D320869A2961CFB000342E56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D32086992961CFB000342E56 /* Assets.xcassets */; };
 		D320869D2961CFB000342E56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D320869B2961CFB000342E56 /* LaunchScreen.storyboard */; };
-		D32086A82961CFB100342E56 /* VenuesmapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086A72961CFB100342E56 /* VenuesmapTests.swift */; };
-		D32086B22961CFB100342E56 /* VenuesmapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086B12961CFB100342E56 /* VenuesmapUITests.swift */; };
-		D32086B42961CFB100342E56 /* VenuesmapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086B32961CFB100342E56 /* VenuesmapUITestsLaunchTests.swift */; };
+		D32086A82961CFB100342E56 /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086A72961CFB100342E56 /* LocationServiceTests.swift */; };
 		D32086C12961D09500342E56 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086C02961D09500342E56 /* Router.swift */; };
+		D32086C52961D24600342E56 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086C42961D24600342E56 /* LocationService.swift */; };
+		D32086C72961D37E00342E56 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086C62961D37E00342E56 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		D32086A42961CFB100342E56 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D32086852961CFA800342E56 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D320868C2961CFA800342E56;
-			remoteInfo = Venuesmap;
-		};
-		D32086AE2961CFB100342E56 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D32086852961CFA800342E56 /* Project object */;
 			proxyType = 1;
@@ -44,11 +37,10 @@
 		D320869C2961CFB000342E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D320869E2961CFB000342E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D32086A32961CFB100342E56 /* VenuesmapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenuesmapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D32086A72961CFB100342E56 /* VenuesmapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesmapTests.swift; sourceTree = "<group>"; };
-		D32086AD2961CFB100342E56 /* VenuesmapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenuesmapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D32086B12961CFB100342E56 /* VenuesmapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesmapUITests.swift; sourceTree = "<group>"; };
-		D32086B32961CFB100342E56 /* VenuesmapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesmapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D32086A72961CFB100342E56 /* LocationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 		D32086C02961D09500342E56 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D32086C42961D24600342E56 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		D32086C62961D37E00342E56 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,13 +58,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D32086AA2961CFB100342E56 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -81,7 +66,6 @@
 			children = (
 				D320868F2961CFA800342E56 /* Venuesmap */,
 				D32086A62961CFB100342E56 /* VenuesmapTests */,
-				D32086B02961CFB100342E56 /* VenuesmapUITests */,
 				D320868E2961CFA800342E56 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,7 +75,6 @@
 			children = (
 				D320868D2961CFA800342E56 /* Venuesmap.app */,
 				D32086A32961CFB100342E56 /* VenuesmapTests.xctest */,
-				D32086AD2961CFB100342E56 /* VenuesmapUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,13 +82,13 @@
 		D320868F2961CFA800342E56 /* Venuesmap */ = {
 			isa = PBXGroup;
 			children = (
+				D32086C32961D1F300342E56 /* Location */,
+				D32086C22961D1D200342E56 /* VenuesMap */,
 				D32086902961CFA800342E56 /* AppDelegate.swift */,
 				D32086922961CFA800342E56 /* SceneDelegate.swift */,
-				D32086942961CFA800342E56 /* ViewController.swift */,
 				D32086992961CFB000342E56 /* Assets.xcassets */,
 				D320869B2961CFB000342E56 /* LaunchScreen.storyboard */,
 				D320869E2961CFB000342E56 /* Info.plist */,
-				D32086C02961D09500342E56 /* Router.swift */,
 			);
 			path = Venuesmap;
 			sourceTree = "<group>";
@@ -113,18 +96,27 @@
 		D32086A62961CFB100342E56 /* VenuesmapTests */ = {
 			isa = PBXGroup;
 			children = (
-				D32086A72961CFB100342E56 /* VenuesmapTests.swift */,
+				D32086A72961CFB100342E56 /* LocationServiceTests.swift */,
 			);
 			path = VenuesmapTests;
 			sourceTree = "<group>";
 		};
-		D32086B02961CFB100342E56 /* VenuesmapUITests */ = {
+		D32086C22961D1D200342E56 /* VenuesMap */ = {
 			isa = PBXGroup;
 			children = (
-				D32086B12961CFB100342E56 /* VenuesmapUITests.swift */,
-				D32086B32961CFB100342E56 /* VenuesmapUITestsLaunchTests.swift */,
+				D32086C02961D09500342E56 /* Router.swift */,
+				D32086942961CFA800342E56 /* ViewController.swift */,
 			);
-			path = VenuesmapUITests;
+			path = VenuesMap;
+			sourceTree = "<group>";
+		};
+		D32086C32961D1F300342E56 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				D32086C42961D24600342E56 /* LocationService.swift */,
+				D32086C62961D37E00342E56 /* LocationManager.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,24 +157,6 @@
 			productReference = D32086A32961CFB100342E56 /* VenuesmapTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D32086AC2961CFB100342E56 /* VenuesmapUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D32086BD2961CFB100342E56 /* Build configuration list for PBXNativeTarget "VenuesmapUITests" */;
-			buildPhases = (
-				D32086A92961CFB100342E56 /* Sources */,
-				D32086AA2961CFB100342E56 /* Frameworks */,
-				D32086AB2961CFB100342E56 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D32086AF2961CFB100342E56 /* PBXTargetDependency */,
-			);
-			name = VenuesmapUITests;
-			productName = VenuesmapUITests;
-			productReference = D32086AD2961CFB100342E56 /* VenuesmapUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,10 +171,6 @@
 						CreatedOnToolsVersion = 14.2;
 					};
 					D32086A22961CFB100342E56 = {
-						CreatedOnToolsVersion = 14.2;
-						TestTargetID = D320868C2961CFA800342E56;
-					};
-					D32086AC2961CFB100342E56 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = D320868C2961CFA800342E56;
 					};
@@ -221,7 +191,6 @@
 			targets = (
 				D320868C2961CFA800342E56 /* Venuesmap */,
 				D32086A22961CFB100342E56 /* VenuesmapTests */,
-				D32086AC2961CFB100342E56 /* VenuesmapUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,13 +212,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D32086AB2961CFB100342E56 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -259,6 +221,8 @@
 			files = (
 				D32086C12961D09500342E56 /* Router.swift in Sources */,
 				D32086952961CFA800342E56 /* ViewController.swift in Sources */,
+				D32086C72961D37E00342E56 /* LocationManager.swift in Sources */,
+				D32086C52961D24600342E56 /* LocationService.swift in Sources */,
 				D32086912961CFA800342E56 /* AppDelegate.swift in Sources */,
 				D32086932961CFA800342E56 /* SceneDelegate.swift in Sources */,
 			);
@@ -268,16 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D32086A82961CFB100342E56 /* VenuesmapTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D32086A92961CFB100342E56 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D32086B22961CFB100342E56 /* VenuesmapUITests.swift in Sources */,
-				D32086B42961CFB100342E56 /* VenuesmapUITestsLaunchTests.swift in Sources */,
+				D32086A82961CFB100342E56 /* LocationServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,11 +243,6 @@
 			isa = PBXTargetDependency;
 			target = D320868C2961CFA800342E56 /* Venuesmap */;
 			targetProxy = D32086A42961CFB100342E56 /* PBXContainerItemProxy */;
-		};
-		D32086AF2961CFB100342E56 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D320868C2961CFA800342E56 /* Venuesmap */;
-			targetProxy = D32086AE2961CFB100342E56 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -518,42 +468,6 @@
 			};
 			name = Release;
 		};
-		D32086BE2961CFB100342E56 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AJ77XWUDCY;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.oroom.VenuesmapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Venuesmap;
-			};
-			name = Debug;
-		};
-		D32086BF2961CFB100342E56 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AJ77XWUDCY;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.oroom.VenuesmapUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Venuesmap;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -580,15 +494,6 @@
 			buildConfigurations = (
 				D32086BB2961CFB100342E56 /* Debug */,
 				D32086BC2961CFB100342E56 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D32086BD2961CFB100342E56 /* Build configuration list for PBXNativeTarget "VenuesmapUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D32086BE2961CFB100342E56 /* Debug */,
-				D32086BF2961CFB100342E56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
