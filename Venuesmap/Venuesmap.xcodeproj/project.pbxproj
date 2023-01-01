@@ -20,6 +20,9 @@
 		D32086CC2961E83A00342E56 /* Labels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086CB2961E83A00342E56 /* Labels.swift */; };
 		D32086CE2961E84F00342E56 /* Symbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086CD2961E84F00342E56 /* Symbols.swift */; };
 		D32086D62961FBB400342E56 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086D52961FBB400342E56 /* Map.swift */; };
+		D32086D92962021700342E56 /* FSQApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086D82962021700342E56 /* FSQApi.swift */; };
+		D32086DB2962022800342E56 /* VenuesDTOGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086DA2962022800342E56 /* VenuesDTOGenerated.swift */; };
+		D32086DD2962034F00342E56 /* VenuesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32086DC2962034F00342E56 /* VenuesService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		D32086CB2961E83A00342E56 /* Labels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Labels.swift; sourceTree = "<group>"; };
 		D32086CD2961E84F00342E56 /* Symbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbols.swift; sourceTree = "<group>"; };
 		D32086D52961FBB400342E56 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		D32086D82962021700342E56 /* FSQApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FSQApi.swift; sourceTree = "<group>"; };
+		D32086DA2962022800342E56 /* VenuesDTOGenerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesDTOGenerated.swift; sourceTree = "<group>"; };
+		D32086DC2962034F00342E56 /* VenuesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenuesService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		D320868F2961CFA800342E56 /* Venuesmap */ = {
 			isa = PBXGroup;
 			children = (
+				D32086D72962020600342E56 /* VenuesService */,
 				D32086CA2961E82600342E56 /* CommonUI */,
 				D32086C32961D1F300342E56 /* Location */,
 				D32086C22961D1D200342E56 /* VenuesMap */,
@@ -137,6 +144,16 @@
 				D32086CD2961E84F00342E56 /* Symbols.swift */,
 			);
 			path = CommonUI;
+			sourceTree = "<group>";
+		};
+		D32086D72962020600342E56 /* VenuesService */ = {
+			isa = PBXGroup;
+			children = (
+				D32086D82962021700342E56 /* FSQApi.swift */,
+				D32086DA2962022800342E56 /* VenuesDTOGenerated.swift */,
+				D32086DC2962034F00342E56 /* VenuesService.swift */,
+			);
+			path = VenuesService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,8 +263,11 @@
 				D32086CC2961E83A00342E56 /* Labels.swift in Sources */,
 				D32086C72961D37E00342E56 /* LocationManager.swift in Sources */,
 				D32086C52961D24600342E56 /* LocationService.swift in Sources */,
+				D32086DB2962022800342E56 /* VenuesDTOGenerated.swift in Sources */,
+				D32086DD2962034F00342E56 /* VenuesService.swift in Sources */,
 				D32086912961CFA800342E56 /* AppDelegate.swift in Sources */,
 				D32086C92961E7A300342E56 /* LocationStatusController.swift in Sources */,
+				D32086D92962021700342E56 /* FSQApi.swift in Sources */,
 				D32086932961CFA800342E56 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
