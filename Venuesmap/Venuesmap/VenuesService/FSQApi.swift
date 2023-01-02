@@ -40,18 +40,6 @@ extension FSQEndpoint {
             ]
         )
     }
-    
-    static var placesSearch: Self {
-        FSQEndpoint(
-            path: "/v3/places/search",
-            queryItems: [
-                .init(name: "query", value: "coffee"),
-                .init(name: "ne", value: "47.6311,-122.3164"),
-                .init(name: "sw", value: "47.6019,-122.3319"),
-                .init(name: "sort", value: "DISTANCE")
-            ]
-        )
-    }
 }
 
 private extension CLLocationCoordinate2D {
