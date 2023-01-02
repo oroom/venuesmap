@@ -9,11 +9,14 @@ import Foundation
 import CoreLocation
 import Combine
 
+
+/// Request request location services acess and subscribe for updates
 protocol LocationAvailability {
     var accesUpdates: AnyPublisher<LocationAccess, Never> { get }
     func requestAccessIfPossible()
 }
 
+/// Request location and listen for location updates
 protocol LocationProvider {
     var locationUpdates: AnyPublisher<CLLocationCoordinate2D, Never> { get }
     func requestLocationIfPossible()

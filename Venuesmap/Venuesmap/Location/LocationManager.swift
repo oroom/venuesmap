@@ -21,6 +21,7 @@ protocol LocationManager {
     func getLocation(_ locationHandler: @escaping (CLLocationCoordinate2D) -> Void)
 }
 
+/// CoreLocation location manager
 final class DefaultLocationManager: NSObject, LocationManager, CLLocationManagerDelegate {
     var locationAuthorizationStatus: CLAuthorizationStatus { manager.authorizationStatus }
     private var handler: (CLAuthorizationStatus) -> Void = { _ in }
@@ -46,6 +47,7 @@ final class DefaultLocationManager: NSObject, LocationManager, CLLocationManager
         manager.delegate = self
     }
     
+    /// One-time location update request
     func getLocation(_ locationHandler: @escaping (CLLocationCoordinate2D) -> Void) {
         self.locationHandler = locationHandler
         manager.startUpdatingLocation()

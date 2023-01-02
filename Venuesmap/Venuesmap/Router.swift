@@ -18,6 +18,7 @@ final class MainRouter {
         self.locationAvailability = locationAvailability
         self.topViewController = UINavigationController(rootViewController: initialVC)
         
+        // Show blocking location access request if location services are disabled
         locationAvailability.accesUpdates
             .subscribe(on: DispatchQueue.main)
             .map { access -> Bool in

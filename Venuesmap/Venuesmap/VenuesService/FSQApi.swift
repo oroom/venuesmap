@@ -29,7 +29,11 @@ struct FSQEndpoint {
 }
 
 extension FSQEndpoint {
-    static func placesSearch(inRect: CoordinateRect) -> Self {
+    /// returns endpoint for search coffe places in provided geo rect
+    /// All parameters are documented here:  https://location.foursquare.com/developer/reference/place-search
+    /// "ne=47.6311,-122.3164"
+    /// "sw=47.6019,-122.3319"
+    static func coffeePlacesSearch(inRect: CoordinateRect) -> Self {
         FSQEndpoint(
             path: "/v3/places/search",
             queryItems: [

@@ -11,9 +11,6 @@ import Combine
 
 protocol ViewsFactory {}
 
-final class ViewsFactoryImpl: ViewsFactory {
-}
-
 struct VenuesViewControllerStyle {
     static let `default`: Self = .init()
 }
@@ -29,8 +26,6 @@ class VenuesViewController: UIViewController {
     let venuesService = VenuesServiceImpl()
     let locationProvider: LocationProvider
     private var bag: Set<AnyCancellable> = []
-    private let style: VenuesViewControllerStyle
-    private let cardsFactory: ViewsFactory
     private let loader = UIActivityIndicatorView.init(style: .large)
     private let noContent = UILabel()
     private var state: VenuesViewControllerState = .initial
@@ -55,9 +50,7 @@ class VenuesViewController: UIViewController {
         return view
     }()
     
-    init(style: VenuesViewControllerStyle = .default, cardsFactory: ViewsFactory = ViewsFactoryImpl(), locationProvider: LocationProvider) {
-        self.style = style
-        self.cardsFactory = cardsFactory
+    init(locationProvider: LocationProvider) {
         self.locationProvider = locationProvider
         super.init(nibName: nil, bundle: nil)
     }
@@ -85,10 +78,11 @@ class VenuesViewController: UIViewController {
 
 private extension VenuesViewController {
     func updateVenues(inRect: CoordinateRect) {
+        loader.startAnimating()
         venuesService.getVenues(inRect: inRect)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in
-                // request finished
+                self.loader.stopAnimating()
             }, receiveValue: { venuesResponce in
                 self.state.venues = venuesResponce.results
                 self.render()
@@ -128,11 +122,6 @@ private extension VenuesViewController {
     }
 
     func configureDataSource() {
-        
-        let mapCell = UICollectionView.CellRegistration<UICollectionViewCell, DiffableCard> { cell, _, item in
-            cell.contentConfiguration = item.card
-        }
-        
         let venueCell = UICollectionView.CellRegistration<UICollectionViewCell, DiffableCard> { cell, _, item in
             cell.contentConfiguration = item.card
         }
@@ -141,11 +130,7 @@ private extension VenuesViewController {
             (collectionView: UICollectionView, indexPath: IndexPath, item: DiffableCard)
             -> UICollectionViewCell? in
             
-            if indexPath.section == 0 {
-                return collectionView.dequeueConfiguredReusableCell(using: mapCell, for: indexPath, item: item)
-            } else {
-                return collectionView.dequeueConfiguredReusableCell(using: venueCell, for: indexPath, item: item)
-            }
+            return collectionView.dequeueConfiguredReusableCell(using: venueCell, for: indexPath, item: item)
         }
     }
 
