@@ -27,7 +27,6 @@ class VenuesViewController: UIViewController {
     let locationProvider: LocationProvider
     private var bag: Set<AnyCancellable> = []
     private let loader = UIActivityIndicatorView.init(style: .large)
-    private let noContent = UILabel()
     private var state: VenuesViewControllerState = .initial
     
     enum Section {
@@ -77,12 +76,22 @@ class VenuesViewController: UIViewController {
 }
 
 private extension VenuesViewController {
+    func loading(activated: Bool) {
+        if activated {
+            loader.startAnimating()
+            venuesCollectionView.alpha = 0.5
+        } else {
+            self.loader.stopAnimating()
+            venuesCollectionView.alpha = 1
+        }
+    }
+    
     func updateVenues(inRect: CoordinateRect) {
-        loader.startAnimating()
+        self.loading(activated: true)
         venuesService.getVenues(inRect: inRect)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { _ in
-                self.loader.stopAnimating()
+                self.loading(activated: false)
             }, receiveValue: { venuesResponce in
                 self.state.venues = venuesResponce.results
                 self.render()
@@ -95,7 +104,6 @@ private extension VenuesViewController {
         view.addSubview(mapPlaceholder)
         view.addSubview(venuesCollectionView)
         view.addSubview(loader)
-        view.addSubview(noContent)
         
         NSLayoutConstraint.activate([
             mapPlaceholder.topAnchor.constraint(equalTo: view.topAnchor),
@@ -110,14 +118,9 @@ private extension VenuesViewController {
             venuesCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         loader.translatesAutoresizingMaskIntoConstraints = false
-        noContent.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             loader.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loader.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-        ])
-        NSLayoutConstraint.activate([
-            noContent.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            noContent.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loader.topAnchor.constraint(equalTo: mapPlaceholder.bottomAnchor, constant: .margin4)
         ])
     }
 
