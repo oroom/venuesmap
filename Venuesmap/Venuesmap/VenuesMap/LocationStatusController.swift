@@ -110,7 +110,7 @@ class LocationStatusController: UIViewController {
             actionDescription.text = "Please go to settings and grant location permission for the Placemap"
             actionButton.setTitle("Go to settings", for: .normal)
         case .notRequested:
-            reason.text = "Provide you location"
+            reason.text = "Provide your location"
             actionDescription.text = "Placemap will use your location to show most relevant venues around you!"
             actionButton.setTitle("Continue", for: .normal)
         }
