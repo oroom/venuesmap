@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import CoreLocation
 
-struct Endpoint {
+struct FSQEndpoint {
     var path: String
     var queryItems: [URLQueryItem] = []
     var request: URLRequest? {
@@ -28,9 +28,21 @@ struct Endpoint {
     }
 }
 
-extension Endpoint {
+extension FSQEndpoint {
+    static func placesSearch(inRect: CoordinateRect) -> Self {
+        FSQEndpoint(
+            path: "/v3/places/search",
+            queryItems: [
+                .init(name: "query", value: "coffee"),
+                .init(name: "ne", value: inRect.ne.query),
+                .init(name: "sw", value: inRect.sw.query),
+                .init(name: "sort", value: "DISTANCE")
+            ]
+        )
+    }
+    
     static var placesSearch: Self {
-        Endpoint(
+        FSQEndpoint(
             path: "/v3/places/search",
             queryItems: [
                 .init(name: "query", value: "coffee"),
@@ -39,5 +51,11 @@ extension Endpoint {
                 .init(name: "sort", value: "DISTANCE")
             ]
         )
+    }
+}
+
+private extension CLLocationCoordinate2D {
+    var query: String {
+        String(format: "%.4f", latitude) + "," + String(format: "%.4f", longitude)
     }
 }

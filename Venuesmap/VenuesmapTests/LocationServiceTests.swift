@@ -94,4 +94,8 @@ final class LocationManagerMock: LocationManager {
     func requestAuthorization() {
         requestAuthorizationCalled = true
     }
+    
+    func getLocation(_ locationHandler: @escaping (CLLocationCoordinate2D) -> Void) {
+        
+    }
 }

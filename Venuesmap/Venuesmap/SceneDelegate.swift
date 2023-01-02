@@ -9,7 +9,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    private var router: MainRouter = MainRouter()
+    lazy var locationService: LocationProvider & LocationAvailability = LocationService()
+    private lazy var router: MainRouter = MainRouter(initialVC: VenuesViewController(locationProvider: locationService), locationAvailability: locationService)
     var window: UIWindow?
 
 

@@ -18,11 +18,13 @@ protocol LocationManager {
     var locationAuthorizationStatus: CLAuthorizationStatus { get }
     func requestAuthorization()
     func registerAuthStatusHandler(_ handler: @escaping (CLAuthorizationStatus) -> Void)
+    func getLocation(_ locationHandler: @escaping (CLLocationCoordinate2D) -> Void)
 }
 
 final class DefaultLocationManager: NSObject, LocationManager, CLLocationManagerDelegate {
-    var locationAuthorizationStatus: CLAuthorizationStatus { CLLocationManager.authorizationStatus() }
+    var locationAuthorizationStatus: CLAuthorizationStatus { manager.authorizationStatus }
     private var handler: (CLAuthorizationStatus) -> Void = { _ in }
+    private var locationHandler: (CLLocationCoordinate2D) -> Void = { _ in }
     
     private lazy var manager: CLLocationManager = {
         var manager = CLLocationManager()
@@ -44,8 +46,22 @@ final class DefaultLocationManager: NSObject, LocationManager, CLLocationManager
         manager.delegate = self
     }
     
+    func getLocation(_ locationHandler: @escaping (CLLocationCoordinate2D) -> Void) {
+        self.locationHandler = locationHandler
+        manager.startUpdatingLocation()
+    }
+    
+    // MARK: CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         handler(status)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+            locationHandler(location.coordinate)
+            locationHandler = { _ in }
+            manager.stopUpdatingLocation()
+        }
     }
 }
 

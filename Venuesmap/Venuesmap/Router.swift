@@ -14,7 +14,7 @@ final class MainRouter {
     private(set) var topViewController: UIViewController
     private var bag = Set<AnyCancellable>()
     
-    init(initialVC: UIViewController = VenuesController(), locationAvailability: LocationAvailability = LocationService()) {
+    init(initialVC: UIViewController, locationAvailability: LocationAvailability) {
         self.locationAvailability = locationAvailability
         self.topViewController = UINavigationController(rootViewController: initialVC)
         

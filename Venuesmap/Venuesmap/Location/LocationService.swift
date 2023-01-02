@@ -14,25 +14,55 @@ protocol LocationAvailability {
     func requestAccessIfPossible()
 }
 
-final class LocationService: NSObject, LocationAvailability {
+protocol LocationProvider {
+    var locationUpdates: AnyPublisher<CLLocationCoordinate2D, Never> { get }
+    func requestLocationIfPossible()
+}
+
+final class LocationService: NSObject, LocationAvailability, LocationProvider {
     
-    var accesUpdates: AnyPublisher<LocationAccess, Never> { state.eraseToAnyPublisher() }
-    var authorizationStatus: CLAuthorizationStatus { locationManager.locationAuthorizationStatus }
+    var accesUpdates: AnyPublisher<LocationAccess, Never> { accesState.eraseToAnyPublisher() }
+    var locationUpdates: AnyPublisher<CLLocationCoordinate2D, Never> { locationValue.eraseToAnyPublisher() }
+    private var authorizationStatus: LocationAccess { locationManager.locationAuthorizationStatus.locationAccess }
     
-    private lazy var state: CurrentValueSubject = CurrentValueSubject<LocationAccess, Never>(authorizationStatus.locationAccess)
+    private lazy var accesState: CurrentValueSubject = CurrentValueSubject<LocationAccess, Never>(authorizationStatus)
+    private lazy var locationValue: PassthroughSubject = PassthroughSubject<CLLocationCoordinate2D, Never>()
     private var locationManager: LocationManager
+    private var isWaitingLocationAcces: Bool = false
     
     init(locationManager: LocationManager = DefaultLocationManager()) {
         self.locationManager = locationManager
         super.init()
         self.locationManager.registerAuthStatusHandler { [ weak self] status in
-            self?.state.send(status.locationAccess)
+            guard let self = self else { return }
+            self.accesState.send(status.locationAccess)
+            if self.isWaitingLocationAcces && status.locationAccess == .granted {
+                self.requestLocationIfPossible()
+            }
         }
     }
     
     func requestAccessIfPossible() {
-        if authorizationStatus == .notDetermined {
+        if authorizationStatus == .notRequested {
             locationManager.requestAuthorization()
+        }
+    }
+    
+    func requestLocationIfPossible() {
+        guard authorizationStatus == .granted else {
+            isWaitingLocationAcces = true
+            return
+        }
+            
+        isWaitingLocationAcces = false
+        locationManager.getLocation { [ weak self] coordinate in
+            self?.locationValue.send(coordinate)
+        }
+    }
+    
+    func getLocation(_ locationHandler: @escaping (CLLocationCoordinate2D) -> Void) {
+        if authorizationStatus == .granted {
+            locationManager.getLocation(locationHandler)
         }
     }
 }

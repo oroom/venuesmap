@@ -27,6 +27,24 @@ extension UILabel {
         return label.usingConstraints()
     }
     
+    static var headline: UILabel {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .headline)
+        label.textAlignment = .left
+        label.textColor = .label
+        label.adjustsFontForContentSizeCategory = true
+        return label.usingConstraints()
+    }
+    
+    static var subheadline: UILabel {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.textAlignment = .left
+        label.textColor = .secondaryLabel
+        label.adjustsFontForContentSizeCategory = true
+        return label.usingConstraints()
+    }
+    
     static var label: UILabel {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .caption1)
@@ -46,4 +64,3 @@ extension UILabel {
         return self
     }
 }
-
