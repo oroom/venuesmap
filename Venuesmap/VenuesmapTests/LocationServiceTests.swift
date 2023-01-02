@@ -15,6 +15,7 @@ final class LocationServiceTests: XCTestCase {
     private var service: LocationService!
     private var bag: Set<AnyCancellable>!
     private var accessUpdates: [LocationAccess]!
+    private var locationUpdates: [CLLocationCoordinate2D]!
     private var locationManagerMock: LocationManagerMock!
 
     override func setUpWithError() throws {
@@ -22,6 +23,7 @@ final class LocationServiceTests: XCTestCase {
         service = LocationService(locationManager: locationManagerMock)
         bag = []
         accessUpdates = []
+        locationUpdates = []
     }
 
     func testServiceUpdateToAccepted() throws {
@@ -79,6 +81,45 @@ final class LocationServiceTests: XCTestCase {
         waitForExpectations(timeout: 0.1)
         XCTAssertEqual(accessUpdates, [.granted, .denied])
     }
+    
+    func testServiceReturnLocationIfAuthorized() throws {
+        
+        locationManagerMock.locationAuthorizationStatus = .authorizedWhenInUse
+        
+        let expectation = self.expectation(description: "update")
+        service.locationUpdates
+            .sink { coordinate in
+                self.locationUpdates.append(coordinate)
+                expectation.fulfill()
+            }
+            .store(in: &bag)
+        
+        service.requestLocationIfPossible()
+        
+        waitForExpectations(timeout: 0.1)
+        XCTAssert(locationUpdates.count == 1)
+    }
+    
+    func testServiceReturnLocationAfterAuthorization() throws {
+        
+        locationManagerMock.locationAuthorizationStatus = .denied
+        
+        let expectation = self.expectation(description: "update")
+        service.locationUpdates
+            .sink { coordinate in
+                self.locationUpdates.append(coordinate)
+                expectation.fulfill()
+            }
+            .store(in: &bag)
+        
+        service.requestLocationIfPossible()
+        XCTAssert(locationUpdates.isEmpty)
+        
+        locationManagerMock.locationAuthorizationStatus = .authorizedWhenInUse
+        locationManagerMock.handler(.authorizedWhenInUse)
+        waitForExpectations(timeout: 0.1)
+        XCTAssert(locationUpdates.count == 1)
+    }
 
 }
 
@@ -96,6 +137,6 @@ final class LocationManagerMock: LocationManager {
     }
     
     func getLocation(_ locationHandler: @escaping (CLLocationCoordinate2D) -> Void) {
-        
+        locationHandler(.init(latitude: 0, longitude: 0))
     }
 }
