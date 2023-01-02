@@ -49,9 +49,9 @@ class LocationStatusController: UIViewController {
     private lazy var actionButton: UIButton = {
         let button = UIButton.systemButton(with: .sfLocationGrant, target: self, action: #selector(action(_:)))
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.contentEdgeInsets = .init(top: 8, left: 20, bottom: 8, right: 20)
-        button.imageEdgeInsets = .init(top: 0, left: -2, bottom: 0, right: 2)
-        button.titleEdgeInsets = .init(top: 0, left: 2, bottom: 0, right: -2)
+        button.contentEdgeInsets = .init(top: .margin2, left: .margin4 + .margin, bottom: .margin2, right: .margin4 + .margin)
+        button.imageEdgeInsets = .init(top: 0, left: -.margin/2, bottom: 0, right: .margin/2)
+        button.titleEdgeInsets = .init(top: 0, left: .margin/2, bottom: 0, right: -.margin/2)
         button.layer.borderColor = button.tintColor.cgColor
         button.layer.borderWidth = 2.0
         button.layer.cornerCurve = .continuous

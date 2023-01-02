@@ -44,7 +44,7 @@ class VenuesViewController: UIViewController {
     lazy var venuesCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: generateLayout())
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.contentInset = .init(top: 16, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = .init(top: .margin4, left: 0, bottom: 0, right: 0)
         return collectionView
     }()
     
@@ -156,7 +156,7 @@ private extension VenuesViewController {
             let estimatedSize = UIScreen.main.bounds.width
             let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(estimatedSize))
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            item.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: 16, bottom: .zero, trailing: 16)
+            item.contentInsets = NSDirectionalEdgeInsets(top: .zero, leading: .margin4, bottom: .zero, trailing: .margin4)
             
             let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(estimatedSize))
             let group = NSCollectionLayoutGroup.horizontal(
@@ -165,12 +165,12 @@ private extension VenuesViewController {
             )
             
             let section = NSCollectionLayoutSection(group: group)
-            section.interGroupSpacing = 16
+            section.interGroupSpacing = .margin4
             return section
         }
 
         let config = UICollectionViewCompositionalLayoutConfiguration()
-        config.interSectionSpacing = 16
+        config.interSectionSpacing = .margin4
 
         let layout = UICollectionViewCompositionalLayout(sectionProvider: sectionProvider, configuration: config)
         return layout

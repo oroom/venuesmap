@@ -68,12 +68,12 @@ final class VenueCardView: UIView & UIContentView {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            name.topAnchor.constraint(equalTo: topAnchor, constant: 4),
-            name.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            name.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            name.topAnchor.constraint(equalTo: topAnchor, constant: .margin),
+            name.leadingAnchor.constraint(equalTo: leadingAnchor, constant: .margin4),
+            name.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -.margin4),
         ])
         NSLayoutConstraint.activate([
-            subtitle.topAnchor.constraint(equalTo: name.bottomAnchor, constant: 8),
+            subtitle.topAnchor.constraint(equalTo: name.bottomAnchor, constant: .margin2),
             subtitle.leadingAnchor.constraint(equalTo: name.leadingAnchor),
             subtitle.trailingAnchor.constraint(equalTo: name.trailingAnchor),
             subtitle.bottomAnchor.constraint(equalTo: bottomAnchor)

@@ -20,3 +20,9 @@ extension NSLayoutConstraint {
         ])
     }
 }
+
+extension CGFloat {
+    static let margin = 4.0
+    static let margin2 = margin*2
+    static let margin4 = margin*4
+}
